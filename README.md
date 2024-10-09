@@ -4,58 +4,14 @@
 
 ### A) Descripción del Proyecto
 
-Este sistema de gestión de pedidos permite a los usuarios realizar pedidos de productos en una tienda en línea y a los administradores gestionar esos pedidos. La arquitectura del sistema es flexible y permite personalizar los pedidos según las preferencias del usuario (usando el patrón Decorator). Además, implementa un mecanismo para notificar a los usuarios sobre el estado de sus pedidos (usando el patrón Observer).
+Se deberá desarrollar un sistema de gestión de pedidos para una tienda en línea. El sistema debe permitir a los usuarios realizar pedidos de productos y a los administradores gestionar esos pedidos. El sistema debe ser flexible y permitir la personalización de los pedidos según las preferencias del usuario. Además, se debe implementar un mecanismo para notificar a los usuarios sobre el estado de sus pedidos.
 
 ### Requisitos Específicos
 
-- **Clase `Pedido`**: Representa un pedido en el sistema. Esta clase contiene:
-  - Información sobre los productos incluidos en el pedido.
-  - El estado actual del pedido (usando el patrón State).
-  - Información relevante como el costo total, momento de entrega, productos agregados o quitados, medio de pago y nombre del repartidor.
+Los requisitos específicos son los siguientes:
 
-- **Productos**:
-  - **Productos Básicos**: Productos individuales.
-  - **Packs**: Compuestos de otros productos básicos o de otros packs (usando el patrón Composite).
+- Implementa una clase `Pedido` que represente un pedido en el sistema. Esta clase debe contener información sobre los productos incluidos en el pedido, el estado actual del pedido y cualquier otra información relevante. Sobre los productos sabemos que bien pueden ser productos básicos o packs que se componen de otros productos básicos o bien, otros packs. De un pedido se debe saber poder cuánto cuesta. Además, debe saber responder en qué momento fue entregado, agregarle o quitarles productos, cambiar el medio de pago, ver el nombre del repartidor, etc. Ojo, ver ciclo de vida del pedido.
 
-- **Personalización de Pedidos**:
-  - Implementación de características como envoltura de regalo y tarjetas de felicitación (usando el patrón Decorator).
+- Implementa un conjunto de clases que permitan personalizar los pedidos. Por ejemplo, podrías poder añadir envoltura de regalo, tarjeta de felicitación, etc. Estos modificadores de pedidos podrían combinarse de manera flexible para crear pedidos personalizados.
 
-- **Ciclo de Vida de un Pedido**:
-  - Los pedidos pueden cambiar de estado: "pendiente", "en proceso", "enviado" y "entregado". Cada estado es responsable de gestionar las transiciones y realizar acciones específicas.
-
-### Clases Implementadas
-
-- **BasicUser**: Representa a un usuario básico del sistema, con funcionalidad para acceder a su nombre y gestionar pedidos.
-
-- **UserType**: Define los permisos de un usuario normal, que no puede cambiar el estado de los pedidos.
-
-- **AdminType**: Permite a los administradores cambiar el estado de los pedidos, reflejando sus permisos especiales.
-
-- **Pedido**: Clase que gestiona la información del pedido y su estado actual.
-
-- **NotPermissionException**: Excepción lanzada cuando un usuario no tiene permiso para realizar una acción.
-
-- **StateOrder**: Enum que define los posibles estados de un pedido.
-
-### Patrones de Diseño
-
-- **Observer**: Para notificaciones sobre el estado de los pedidos.
-- **Decorator**: Para la personalización de pedidos.
-- **Composite**: Para estructurar productos y packs.
-- **State**: Para gestionar el ciclo de vida de un pedido.
-
-### Descripción de Clases y Responsabilidades
-
-- **BasicUser**: Proporciona métodos para gestionar el nombre del usuario y el estado de los pedidos.
-
-- **UserType**: Implementa restricciones para los usuarios normales.
-
-- **AdminType**: Permite a los administradores realizar acciones sobre los pedidos que no son permitidas para usuarios normales.
-
-- **Pedido**: Contiene información sobre los productos, el estado del pedido y métodos para cambiar su estado.
-
-- **NotPermissionException**: Maneja las situaciones en que un usuario intenta realizar una acción no permitida.
-
-- **StateOrder**: Enum que ayuda a gestionar los estados de los pedidos.
-
----
+- Además, para gestionar el ciclo de vida de un pedido, el cual puede cambiar de "pendiente", "en proceso", "enviado" y "entregado". Cada estado debe ser responsable de gestionar las transiciones entre estados y realizar acciones específicas según el estado actual del pedido. Por ejemplo: Implementa un mecanismo que permita notificar a los usuarios sobre el estado de sus pedidos.
