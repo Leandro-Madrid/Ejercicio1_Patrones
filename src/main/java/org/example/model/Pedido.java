@@ -1,12 +1,14 @@
 package org.example.model;
 
 import org.example.model.estado.*;
+import org.example.model.interfaces.IPedido;
+import org.example.model.interfaces.SumadorDePreciosDeProductos;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Pedido implements IPedido, SumadorDePreciosDeProductos{
+public class Pedido implements IPedido, SumadorDePreciosDeProductos {
     List<Producto> productos;
     EstadoPedido estado;
 
@@ -15,7 +17,6 @@ public class Pedido implements IPedido, SumadorDePreciosDeProductos{
         this.estado = new Creado();
     }
     public void agregarProducto(Producto unProducto) {
-        //this.productos.add(unProducto);
         this.estado.agregarProducto(this.productos, unProducto);
     }
 

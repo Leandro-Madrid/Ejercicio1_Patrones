@@ -1,9 +1,13 @@
-package org.example.model;
+package org.example.model.decorador;
+
+import org.example.model.interfaces.IPedido;
+import org.example.model.Pedido;
+import org.example.model.Producto;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class DecoradorPedido implements IPedido{
+public abstract class DecoradorPedido implements IPedido {
     private Pedido pedido;
     public DecoradorPedido(Pedido unPedido){
         this.pedido = unPedido;

@@ -1,8 +1,4 @@
-package org.example.model.estado;
-
-import org.example.model.Producto;
-
-import java.util.List;
+package org.example.model;
 
 public class Monio extends Producto {
     public Monio() {

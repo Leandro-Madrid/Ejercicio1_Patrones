@@ -1,6 +1,8 @@
 package org.example.model;
 
-public abstract class Producto implements SumadorDePreciosDeProductos{
+import org.example.model.interfaces.SumadorDePreciosDeProductos;
+
+public abstract class Producto implements SumadorDePreciosDeProductos {
     private String nombre, descripcion;
 
     public Producto(String unNombre, String unaDescripcion){
