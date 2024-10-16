@@ -1,4 +1,7 @@
-import org.example.*;
+import org.example.exception.NotRepartidorDesignadoException;
+import org.example.model.*;
+import org.example.model.Basico;
+import org.example.model.estado.Creado;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

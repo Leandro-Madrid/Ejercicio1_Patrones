@@ -1,4 +1,4 @@
-package org.example;
+package org.example.model;
 
 public abstract class Producto implements SumadorDePreciosDeProductos{
     private String nombre, descripcion;

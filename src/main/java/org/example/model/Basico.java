@@ -1,4 +1,6 @@
-package org.example;
+package org.example.model;
+
+import org.example.model.Producto;
 
 public class Basico extends Producto {
     private Long precio;
